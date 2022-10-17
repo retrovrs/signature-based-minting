@@ -165,31 +165,6 @@ const Home: NextPage = () => {
 
       {/* Content */}
       <div className={styles.container}>
-        {/* Top Section */}
-        <h1 className={styles.h1}>Signature-Based Minting</h1>
-        <p className={styles.explain}>
-          Signature-based minting with{" "}
-          <b>
-            {" "}
-            <a
-              href="https://thirdweb.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.purple}
-            >
-              thirdweb
-            </a>
-          </b>{" "}
-          + Next.JS to create a community-made NFT collection with restrictions.
-        </p>
-
-        <p>
-          Hint: We only give out signatures if your NFT name is a cool{" "}
-          <b>animal name</b>! 😉
-        </p>
-
-        <hr className={styles.divider} />
-
         <div className={styles.collectionContainer}>
           <h2 className={styles.ourCollection}>
             Mint your own NFT into the collection:

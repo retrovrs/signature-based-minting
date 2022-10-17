@@ -51,7 +51,7 @@ Let's get into it!
 
 To create an NFT collection, we can use the thirdweb dashboard and create a fully customizable NFT collection in just a few clicks.
 
-Head to https://thirdweb.com/dashboard and create a new contract on the Polygon Mumbai network. Click **Create NFTs and Tokens** > **NFT Collection**.
+Head to https://thirdweb.com/dashboard and create a new contract on the Polygon Goerli network. Click **Create NFTs and Tokens** > **NFT Collection**.
 
 Give your collection a name and click **Deploy now**!
 
@@ -67,7 +67,7 @@ Our application is wrapped in a Thirdweb Provider so that we can access Thirdweb
 import { ChainId, ThirdwebProvider } from "@thirdweb-dev/react";
 
 // This is the chainId your dApp will work on.
-const activeChainId = ChainId.Mumbai;
+const activeChainId = ChainId.Goerli;
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -166,7 +166,7 @@ const { authorAddress, nftName, imagePath } = JSON.parse(req.body);
 const sdk = ThirdwebSDK.fromPrivateKey(
   // Your wallet private key (read it in from .env.local file)
   process.env.PRIVATE_KEY as string,
-  "mumbai"
+  "goerli"
 );
 ```
 

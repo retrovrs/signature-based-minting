@@ -1,7 +1,6 @@
 import "../styles/globals.css";
 import { ThirdwebSDK } from "@thirdweb-dev/sdk";
 import type { NextApiRequest, NextApiResponse } from "next";
-import animalNames from "../../animalNames";
 
 export default async function server(
   req: NextApiRequest,
@@ -21,7 +20,7 @@ export default async function server(
     const sdk = ThirdwebSDK.fromPrivateKey(
       // Your wallet private key (read it in from .env.local file)
       process.env.PRIVATE_KEY as string,
-      "mumbai"
+      "goerli"
     );
 
     // Load the NFT Collection via it's contract address using the SDK
@@ -35,10 +34,6 @@ export default async function server(
 
     // 1) Check that it's an animal name from our list of animal names
     // This demonstrates how we can restrict what kinds of NFTs we give signatures for
-    if (!animalNames.includes(nftName?.toLowerCase())) {
-      res.status(400).json({ error: "That's not one of the animals we know!" });
-      return;
-    }
 
     // 2) Check that this wallet hasn't already minted a page - 1 NFT per wallet
     const hasMinted = (await nftCollection.balanceOf(authorAddress)).gt(0);
